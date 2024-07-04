@@ -58,15 +58,11 @@ For projected battery life in hours [Batt] it is in reference to the Duracell 24
 | Intro Animation | 5.08V | 111mA | 564mW | 20 hours 51 minutes |
 | Title Screen | 5.08V | 112-125mA | 568-635mW | 20 h  42m - 18 h 31 m |
 | Overworld | 5.08V | 123mA | 624mW | 18 hours 51 minutes |
-
-| Pokemon Red [SillyHatMBC5] | Voltage V | Current mA | Power mW | Batt H |
-| ----------------------------------- | ------------ | ---------------- | --------------- | ------------- |
+| **Pokemon Red [SillyHatMBC5]** | ----- | ----- | ----- | ----- |
 | Intro Animation | 5.08V | 110mA | 559mW | 21 hours 2 minutes |
 | Title Screen | 5.08V | 110-124mA | 559-630mW | 21 h 1 m - 18 h 40 m |
 | Overworld | 5.08V | 123mA | 624mW | 18 hours 50 minutes |
-
-| Pokemon Red [CPLD] | Voltage V | Current mA | Power mW | Batt H |
-| ----------------------------------- | ------------ | ---------------- | --------------- | ------------- |
+| **Pokemon Red [CPLD]** | ----- | ----- | ----- | ----- |
 | Intro Animation | 5.02V | 158mA | 793mW | 14 hours 50 minutes |
 | Title Screen | 5.02V | 158-174mA | 793-873mW | 14 h 50 m - 13 h 28 m |
 | Overworld | 5.02V | 160mA | 803mW | 14 hours 39 minutes |
@@ -75,19 +71,15 @@ For projected battery life in hours [Batt] it is in reference to the Duracell 24
 
 | Pokemon Blue [Nintendo] | Voltage V | Current mA | Power mW | Batt |
 | ----------------------------------- | ------------ | ---------------- | --------------- | -------- |
-| Intro Animation | 5.14V | 44mA | 226mW |  hours  minutes |
-| Title Screen | 5.14V | 44-60mA | 226-308mW |  h  m -  h  m |
-| Overworld | 5.14V | 47.6mA | 245mW |  hours  minutes |
-
-| Pokemon Red [SillyHatMBC5] | Voltage V | Current mA | Power mW | Batt H |
-| ----------------------------------- | ------------ | ---------------- | --------------- | ------------- |
-| Intro Animation | 5.14V | 41mA | 210mW |  hours  minutes |
-| Title Screen | 5.13V | 42-59mA | 215-303mW |  h  m -  h  m |
-| Overworld | 5.13V | 49mA | 251mW |  hours  minutes |
-
-| Pokemon Red [CPLD] | Voltage V | Current mA | Power mW | Batt H |
-| ----------------------------------- | ------------ | ---------------- | --------------- | ------------- |
-| Intro Animation | 5.13V | 89mA | 457mW |  hours  minutes |
-| Title Screen | 5.10V | 89-109mA | 457-559mW |  h  m -  h  m |
-| Overworld | 5.10V | 91mA | 467mW |  hours  minutes |
+| Intro Animation | 5.14V | 44mA | 226mW | 52 hours 2 minutes |
+| Title Screen | 5.14V | 44-60mA | 226-308mW | 52 h 2 m - 38 h 11 m |
+| Overworld | 5.14V | 47.6mA | 245mW | 48 hours 0 minutes |
+| **Pokemon Red [SillyHatMBC5]** | ----- | ----- | ----- | ----- |
+| Intro Animation | 5.14V | 41mA | 210mW | 56 hours 0 minutes |
+| Title Screen | 5.13V | 42-59mA | 215-303mW | 54 h 41 m - 38 h 49 m |
+| Overworld | 5.13V | 49mA | 251mW | 46 hours 51 minutes |
+| **Pokemon Red [CPLD]** | ----- | ----- | ----- | ----- |
+| Intro Animation | 5.13V | 89mA | 457mW | 25 hours 44 minutes |
+| Title Screen | 5.10V | 89-109mA | 457-559mW | 25 h 44 m - 21 h 2 m |
+| Overworld | 5.10V | 91mA | 467mW | 25 hours 11 minutes |
 
