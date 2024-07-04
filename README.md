@@ -70,7 +70,7 @@ For projected battery life in hours [Batt] it is in reference to the Duracell 24
 ### DMG
 
 | Pokemon Blue [Nintendo] | Voltage V | Current mA | Power mW | Batt | Diff |
-| ----------------------------------- | ------------ | ---------------- | --------------- | -------- |
+| ----------------------------------- | ------------ | ---------------- | --------------- | -------- | --- |
 | Intro Animation | 5.14V | 44mA | 226mW | 52 hours 2 minutes | 100% |
 | Title Screen | 5.14V | 44-60mA | 226-308mW | 52 h 2 m - 38 h 11 m | 100% |
 | Overworld | 5.14V | 47.6mA | 245mW | 48 hours 0 minutes | 100% |
