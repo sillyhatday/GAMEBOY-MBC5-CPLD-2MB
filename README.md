@@ -23,7 +23,9 @@ The whole project is based from Alex's project from years back. Without that pro
 	- Power use is high
 	- Extra components required to program CPLD
 
-## Supply Voltages:
+## Design Considerrations
+
+### Supply Voltages:
 
 MAX 3000A datasheet shows the maximum supply voltage for the CPLD is 4.6v. Using a diode to drop 0.7v from 5v, the CPLD could potentially run on 4.3v. Two diodes in series would bring things to 3.6v. Just within the max recommended supply voltage.
 
@@ -39,17 +41,30 @@ Input pin max operating voltage
 
 If you were in China selling these beyond cheap, then a single diode would be acceptable. Even then I could see them being put straight to 5v.
 
+### FRAM Precharge
+
+I've used an OR gate to generate the RAMCS signal from the memory mapper output and system clock signal. This is a hold over from the traditional fix done on DIY carts or FRAM retrofits to Nintendo carts.
+
+The CPLD can perform this operation internally and the software is there in Alex's code, but it doesn't seem to work correctly. I have no doubt this is due to my low quality FRAM, but it is interesting as to why this doesn't work. It can only be a timing issue as far as I can see. I don't have the tools required to be able to look at the data signals and determine what the problem might be.
+
+The symptoms being that not only does the game not save correctly, some games glitch and crash. It's as though the RAM is putting data on the bus. I wonder if it's conflicting with a read operation with the ROM somehow. Not sure.
+
+CPLD code segment:
+![image](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/677a3d42-db7b-4875-b0e2-3d32b3634d5c)
+
+If clock signal is high then set ramCE high to disable FRAM (chip enable pin 20). If clock signal is low the pass through inputCE value (1 or 0) to ramCE output.
+
 ## Power use:
 
 Power usage vs Nintendo carts vs DIY carts.
 
-Power use so far seems to fall inline with the EZ flash Jr. This is unfortunate but logical as the EZ Flash uses the same PLD/FPGA technology to function.
+Power use so far seems to fall inline with the EZ flash Jr. This is unfortunate, but logical as the EZ Flash uses the same PLD/FPGA technology. Overall based on measurments takenm, the CPLD memory mapper looks to use 45 to 47mA more current than a regular cart. I intend to eventually measure cartridge current alone and not whole system current. This should remove any differences in hardware silicon and hardware revisions.
 
-These are some rough current measurements taken at the battery terminals of a Bucket Mouse DMGC and a stock DMG, with the screen on max brightness and no sound.
+These are some rough current measurements taken at the battery terminals of a Bucket Mouse DMGC and a stock DMG. These are done with the screen on max brightness and no sound. Pokemon Blue and Red were used interchangeably, as they are virtually the same game.
 
-Pokemon Blue and Red were used interchangeably, as they are virtually the same game.
+For projected battery life in hours [Batt] it is in reference to the Duracell 2450mAh ones I use for Gameboy gaming. It is calculated based on mWh (11760mWh) to eliminate the voltage decrease as capacity is used. The mWh was calculated using the duracell datasheet for mAh and nominal voltage. Discharge rates were ignored as these batteries have an excellent ability to maintain capacity under high loads (1C, 2C, etc). Between 1C and 0.1C is about 5% difference.
 
-For projected battery life in hours [Batt] it is in reference to the Duracell 2450mAh ones I use for Gameboy gaming. It is calculated based on mWh to eliminate the voltage decrease as capacity is used. 11760mWh 11.76Wh
+Datasheet: https://panda-bg.com/datasheet/1602-362229-Battery-Cell-AA-2450-mAh-Ni-MH-DURACELL.pdf
 
 ### DMGC
 
