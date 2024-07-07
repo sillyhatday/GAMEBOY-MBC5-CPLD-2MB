@@ -23,6 +23,29 @@ The whole project is based from Alex's project from years back. Without that pro
 	- Power use is high
 	- Extra components required to program CPLD
 
+## Parts List
+
+### Cartridge x1
+
+| Part No. | Package | Qty |
+| -------- | ------- | --- |
+| 29F016 | TSOP48 | 1 |
+| FM1808 | SOIC28 | 1 |
+| EPM3064A/32A | TQFP44 | 1 |
+| 74LVC1G332 | TSOP6 | 1 |
+| AP2127K | SOT23-5 | 1 |
+| Cap 100nF | 0603 | 6 |
+| Res 10K | 0603 | 1 |
+
+
+### JTAG Adaptor
+
+| Part No. | Qty |
+| -------- | --- |
+| DS Lite Cart Conn | 1 |
+| USB C USB4125 | 1 |
+| Pin Headers | 2x5-P2.54mm |
+
 ## Design Considerrations
 
 ### Supply Voltages:
