@@ -108,3 +108,11 @@ Finally time to program the CPLD. Check “Program/Configure” and “Verify”
 ![6 ProgVerifyCPLD](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/22686784-cfa1-4366-9776-a0bd3121f770)
 
 Now move over to your GBxCart software and test it out. Unplug the JTAG hardware and plug your cart into your GBxCart.
+
+## Compatibility
+
+Alex who wrote this code originally, designed it to be an MBC5 emulation. It behaves well enough as an MBC5 that the Gameboy and Flash programmers do not seem to care. One difference from the top of my head, after reading Alex's blog, is that this CPLD version does not map bank 0 as true hardware does. This should never be an issue, as bank 0 is always available in the lower 16KB address space [0x0000-3FFF]. On real hardware, if you mapped bank 0 to the upper 16KB [0x4000-7FFF], you would get the data always available in 0x0000-3FFF in 0x4000-7FFF. In this implementation, it will do as the MBC1 does, by interpreting a bank 0 map request as a bank 1 request.
+
+In theory this should never cause an issue. Logically there is no reason to map bank 0 in this use case. A much better idea would be, to map bank 1 as the default in the upper address space [0x4000-7FFF]. This way you would have the first 32KB chunk of the ROM available like any 32KB size game. The only way this will cause and issue is if the game programmer coded a zero bank map and then tried reading the upper memory space [0x4000-7FFF].
+
+So why did Nintendo remove this idiot proof feature from their first mapper to the later ones? In my opinion, I think they realised mapping 0 bank is a waste of time and it doesn't hurt anything to do. Mostly, as MBC1 and MBC5 use a second register to select the highest address bit in their extended ROM mode, you end up with holes in the address space you need to keep track of. For MBC1 you have 512KB of ROM space available, in extended mode you have 2MB available. The quadrupling of space uses another register to store 2 extra bits. These are then output on two extra I/O pins. If you want the first bank of the 1 to 1.5MB ROM space, that is bank zero, which switches to a 1. Each 512KB ROM space is missing bank 0. In MBC5 this does not exist as it is able to map bank zero. MBC5 base…tbc2MB/assets/65309612/4b8b82a4-8f76-4212-8625-ee4df86bf91d)
