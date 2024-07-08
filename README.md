@@ -52,19 +52,17 @@ This is a rough guide and you are expected to know some things already, such as 
 
 First off, order the cart PCB from your manufacturer of choice. I use JLC for small quantity orders like this as they work out cheapest. Make sure to choose ENIG finish and 0.8mm thickness. You do not need to order the JTAG adaptor if you wish to manually solder to the test points on each cart. The adaptor does not need to be ENIG finsih.
 
-
 Order your parts from the list for however many carts you ordered. Get them all from Aliexpress, unless you want to order legit FRAM from Digikey. The flash chip and CPLD are obsolete long ago and only available second hand. You can get some generic USB blaster from eBay, Aliexpress, Amazon also.
 
 Get your USB Blaster drivers installed. I used a github repo for the drivers. Install them through device manager.
 
 More detail: https://www.terasic.com.tw/wiki/Intel_USB_Blaster_Driver_Installation_Instructions
 
-
 Link: https://github.com/sudhamshu091/USB-Blaster-Driver-for-DE10-lite
 
 Assemble the cart. Make sure you have good solder joints and that any flux is thoroughly cleaned from IC pins. The JTAG interface seems sensitive and excess flux has caused me issues trying to program.
 
-Make sure to download the programmer software from here or source it yourself if you wish. The install is simple, just click through and wait.
+Make sure to download the programmer software from here or source it yourself if you wish. The install is simple, just click through and wait. I have also uploaded it here: https://archive.org/details/quartus-iiprogrammer-and-signal-tap-ii-13.1.0.162.7z
 
 Insert your assembled cart into the JTAG adaptor using the 3D printed shim so that the cart can be inserted upside down. (The side with the 6 cart edge pins). If you don’t have  access to a shim, you can sacrifice an old Gameboy cart by cutting it up so that your cart can fit in it upside down.
 
