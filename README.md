@@ -12,9 +12,9 @@ The whole project is based from Alex's project from years back. Without that pro
 
 ### Advantages:
 
-	- No need for sourcing a donor cartridge
-	- Multi MBC compatibility
-	- Cheaper to build vs other carts*
+	+ No need for sourcing a donor cartridge
+	+ Multi MBC compatibility
+	+ Cheaper to build vs other carts*
 
 ### Disadvantages:
 
@@ -23,6 +23,20 @@ The whole project is based from Alex's project from years back. Without that pro
 	- Power use is high
 	- Extra components required to program CPLD
 
+## Prerequisites
+
+You are going to need a bunch of stuff to complete this project.
+
+	* The full components parts list and cart PCB
+	* (Optional) JTAG adaptor PCB
+	* Altera USB Blaster for JTAG
+	* Windows PC with Quartus II Programmer or Quartus II Web Edition
+	* GBxCart and related software
+ 	* Modified Gameboy cart shell or (optional) 3D printed Game Gear cart adaptor
+	* Equipment to solder tiny SMD components
+	* Skills to solder tiny SMD components reliably
+
+  
 ## Parts List
 
 ### Cartridge x1
@@ -45,6 +59,9 @@ The whole project is based from Alex's project from years back. Without that pro
 | DS Lite Cart Conn | 1 |
 | USB C USB4125 | 1 |
 | Pin Headers | 2x5-P2.54mm |
+| GG Adaptor or Shell | 1 |
+
+Link to GG Adaptor: https://www.thingiverse.com/thing:5830799
 
 # Guide
 
@@ -66,7 +83,7 @@ Make sure to download the programmer software from here or source it yourself if
 
 Insert your assembled cart into the JTAG adaptor using the 3D printed shim so that the cart can be inserted upside down. (The side with the 6 cart edge pins). If you don’t have  access to a shim, you can sacrifice an old Gameboy cart by cutting it up so that your cart can fit in it upside down.
 
-Launch the Quartus software you just installed.
+Launch the Quartus II Programmer software you just installed.
 
 ![2 MainProgUSBBlasterSelected](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/70f33a9c-51d2-422a-b8f0-de7029f098a5)
 
@@ -78,8 +95,7 @@ Once selected select the POF file for the CPLD you are using, 3064A or 3032A.
 
 ![3 FileSelected](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/509d84be-c925-4928-9327-ad6c75a6f1af)
 
-
-If the CPLD is unproven to work yet, it may also be programmed from its previous life. Click “Erase” and press start. If your JTAG is connected properly and working, it should erase quickly.
+If the CPLD is unproven to work yet, it may also be programmed from its previous life. Click “Erase” and press start. If your JTAG is connected properly and working, it should erase quickly. If problems continue, recheck JTAG connections, solder joints and flux residue. By this point, if things still do not work, then the CPLD is already programmed with JTAG disabled (requiring an external programmer) or it is damaged internally.
 
 ![4 EraseCPLD](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/0c7be1bc-0fed-4b33-837c-dfc981d2b265)
 
