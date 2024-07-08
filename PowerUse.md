@@ -41,3 +41,27 @@ Datasheet: https://panda-bg.com/datasheet/1602-362229-Battery-Cell-AA-2450-mAh-N
 | Intro Animation | 5.13V | 89mA | 457mW | 25 hours 44 minutes | 67.6% |
 | Title Screen | 5.10V | 89-109mA | 457-559mW | 25 h 44 m - 21 h 2 m | 67.6-58%
 | Overworld | 5.10V | 91mA | 467mW | 25 hours 11 minutes | 62.4% |
+
+### Cart Power Only
+
+I furthered these measurements with a different test setup, so as to get a more accurate idea of how much power the cart uses. I cut the thin part of the 5V plane and bridged it with a 0.5Ω shunt resistor. I wanted to try it this way, instead of my multimeter inline, to sanity check previous measurements and accuracy of my multimeter. The measurments below seem to match what Alex recorded in his blog. Bear in mind this is for the whole cart and Alex was using SRAM. So there will be some difference and innacuracies.
+
+Alex's blog: https://www.insidegadgets.com/2018/08/12/building-a-2mb-mbc5-gameboy-cart-part-3-pcbs-arrived-adding-some-mbc1-support-and-troubleshooting-a-few-games/
+
+1mV = 1mA x 2
+
+This is for the EPM3032A cart. I would like to repeat these measurments for the 3064A version in the future.
+
+| Pokemon Shin Red | Resistance Ω | Vdrop | Current mA | Power mW |
+| ---------------- | ------------ | ----- | ---------- | -------- |
+| Intro Animation | 0.5 | 19.2 | 38.4 | 192 |
+| Title Screen | 0.5 | 19.4 | 38.8 | 194 |
+| Overworld A | 0.5 | 20 | 40 | 200 |
+| Overworld B | 0.5 | 21 | 42 | 210 |
+| Overworld Talking | 0.5 | 26.1 | 52.2 | 261 |
+| Pokemon Centre Nurse | 0.5 | 26.1 | 52.2 | 261 |
+| Battle Scene | 0.5 | 23.3 | 46.6 | 233 |
+| Pause Menu | 0.5 | 25.9 | 51.8 | 259 |
+| Pokemon Stats | 0.5 | 26.1 | 52.2 | 261 |
+
+
