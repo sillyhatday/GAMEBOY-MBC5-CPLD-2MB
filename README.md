@@ -64,6 +64,14 @@ You are going to need a bunch of stuff to complete this project.
 
 Link to GG Adaptor: https://www.thingiverse.com/thing:5830799
 
+For the USB Blaster I would suggest avoiding the small ones shown below. I found them to be flakey. Talk to some CPLD and not others, even ones it could talk to it couldn't program. The same chips worked on other programmers.
+
+![USB-Blaster-ALTERA-CPLDFPGA-Programmer-1-52150820](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/7502e3cd-df51-44c7-a606-4e6c02629cb4)
+
+I suggest this one, it has been much more solid.
+
+![AliJTAG](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/7360df56-3824-4cea-9fbe-50ed7c374452)
+
 # Guide
 
 This is a rough guide and you are expected to know some things already, such as how to use a Windows PC, solder SMD parts, etc.
