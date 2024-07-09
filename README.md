@@ -66,7 +66,8 @@ Link to GG Adaptor: https://www.thingiverse.com/thing:5830799
 
 For the USB Blaster I would suggest avoiding the small ones shown below. I found them to be flakey. Talk to some CPLD and not others, even ones it could talk to it couldn't program. The same chips worked on other programmers.
 
-![USB-Blaster-ALTERA-CPLDFPGA-Programmer-1-52150820](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/7502e3cd-df51-44c7-a606-4e6c02629cb4)
+![USB-Blaster-ALTERA-CPLDFPGA-Programmer-1-52150820](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/c1cf440a-68b1-4ccf-bb4e-ad689d0300b6)
+
 
 I suggest this one, it has been much more solid.
 
