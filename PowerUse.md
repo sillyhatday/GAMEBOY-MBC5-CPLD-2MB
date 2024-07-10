@@ -6,7 +6,7 @@ Power use so far seems to fall inline with the EZ flash Jr. This is unfortunate,
 
 These are some rough current measurements taken at the battery terminals of a Bucket Mouse DMGC and a stock DMG. These are done with the screen on max brightness and no sound. Pokemon Blue and Red were used interchangeably, as they are virtually the same game.
 
-For projected battery life in hours [Batt] it is in reference to the Duracell 2450mAh ones I use for Gameboy gaming. It is calculated based on mWh (11760mWh) to eliminate the voltage decrease as capacity is used. The mWh was calculated using the duracell datasheet for mAh and nominal voltage. Discharge rates were ignored as these batteries have an excellent ability to maintain capacity under high loads (1C, 2C, etc). Between 1C and 0.1C is about 5% difference.
+For projected battery life in hours [Batt], it is in reference to the Duracell 2450mAh batteries I use for Gameboy gaming. It is calculated based on mWh (11760mWh) to eliminate the voltage decrease as capacity is used. The mWh was calculated using the duracell datasheet, taking their mAh and nominal voltage. Discharge rates were ignored as these batteries have an excellent ability to maintain capacity under high loads (1C, 2C, etc). Between 1C and 0.1C is about 5% difference.
 
 Datasheet: https://panda-bg.com/datasheet/1602-362229-Battery-Cell-AA-2450-mAh-Ni-MH-DURACELL.pdf
 
@@ -46,7 +46,7 @@ I'm ending this test setup here, but I wanted to keep the data as it is still us
 
 ## Cart Power Only
 
-I switched to a different test setup, so as to get a more accurate idea of how much power the cart uses. I cut the thin part of the 5V plane and bridged it with a 2.2Ω shunt resistor, but before, I verified the resistor was 2.2Ω to one decimal place. I wanted to try it this way instead of my multimeter inline current measurment, to sanity check previous measurements and accuracy of my multimeter. The measurments below seem to match what Alex recorded in his blog. Bear in mind this is for the whole cart and Alex was using SRAM in his cart. So there will be some difference and innacuracies from that, but this is a different project.
+I switched to a different test setup, so as to get a more accurate idea of how much power the cart uses. I cut the thin part of the 5V plane and bridged it with a 2.2Ω shunt resistor. Before that, I verified the resistor was 2.2Ω to one decimal place. I wanted to try this instead of my multimeter current measurment so as to sanity check previous measurements and accuracy of my multimeter. The measurments below seem to match what Alex recorded in his blog. Bear in mind though this is for the whole cart, and Alex was using SRAM in his cart. Meaning there will be some difference and innacuracies against his results.
 
 Alex's blog: https://www.insidegadgets.com/2018/08/12/building-a-2mb-mbc5-gameboy-cart-part-3-pcbs-arrived-adding-some-mbc1-support-and-troubleshooting-a-few-games/
 
@@ -153,4 +153,34 @@ So what changed? I removed the code for the PRECHARGE logic. I had a feeling tha
 
 In any case, I feel v1.1 is a step forwards. That bit of code isn't needed anyway. Further optimising could come from stripping out the MBC1 detect logic, as I don't need it anyway.
 
-Next I think is to try another game. One that doesn't use any of the RAM and also one with no ROM banking too. It's worth seeing how much current the CPLD uses when only tasked with ROM banking and also idling. Then finally, butcher one of my own DIY MBC5 carts to see what a 'normal' cart uses. I don't feel like buthering my original Nintendo carts.
+Next I think is to try another game. One that doesn't use any of the RAM and also one with no ROM banking too. It's worth seeing how much current the CPLD uses when only tasked with ROM banking and also idling. Then finally, butcher one of my own DIY MBC5 carts to see what a 'normal' cart uses. I don't feel like butchering my original Nintendo carts.
+
+### Further Analysis
+
+I want to look at each measurment and see if we can make sense of it. First up,
+
+**The Intro Animation**
+
+So the intro animation recorded almost the lowest power usage. This is not a result I would expect having a whole bunch of animations on screen. My guess is the Gameboy is working hard, but not the cartridge. I would be willing to guess that most of the power being used is the CPLD in an idle state (I think that Alex said it was around 30mA) and the rest being the ROM chip. I'm not convinced the RAM chip is doing much of anything due to data further down the table.
+
+So, I think the Gameboy is just streaming data out of one ROM bank for the whole intro as it does not vary much through the whole thing.
+
+**Title Screen (Low & High)**
+
+These two fit together nicely as it shows what is exactly going on. From memory reading about the Pokemon games, they make clever use of the cartridge RAM as work RAM. There is also a clever compression algorithm going on for sprite/graphics data. The low power draw is when the Pokemon graphic is stationary on screen, the jump in power is when the graphics slides off screen and slides in a new one. This is when the Gameboy must be shuffling data in and out of cartridge RAM from the ROM and between the Gameboy onboard RAM. The cartridge must be swapping RAM and ROM banks while doing this, causing all chips onboard to be busy bodies.
+
+**Overworld**
+
+I can't really explain this one. The power use varies depending on where you are located on the map. It doesn't make a whole lot of sense as things don't line up with expectations. On screen animations you may expect to cause higher power but that's not always the case. Bit of a mystery as I'd imagine everything needed to be displayed would be in RAM and while stationary, there can't be much game logic being streamed from the cart.
+
+**Overworld Talking, Pokemon Centre Nurse, Pause Menu and Pokemon Stats**
+
+This was a supprise but also a mystery to me. Having the lower white text box on screen always causes high cartridge power use. I could see why while loading the nex text panel and putting it on screen, but while sat stationary doesn't make sense to me. Does it have something to do with the Gameboy feature of being able to overlay a window on top of things?
+
+**Battle Screen**
+
+This one makes no sense to me but also does. I wouldn't expect huge power use on this screen with nothing going on, which is the case. Yet we just saw that all text boxes on screen cause power to jump, while the battle scene has exactly that going on. There are spikes in power as things change around on screen as you'd expect. Once more the Gameboy is doing a lot of work with sprites and animations.
+
+## Same Test, Different Game
+
+To be filled out
