@@ -155,9 +155,9 @@ In any case, I feel v1.1 is a step forwards. That bit of code isn't needed anywa
 
 Next I think is to try another game. One that doesn't use any of the RAM and also one with no ROM banking too. It's worth seeing how much current the CPLD uses when only tasked with ROM banking and also idling. Then finally, butcher one of my own DIY MBC5 carts to see what a 'normal' cart uses. I don't feel like butchering my original Nintendo carts.
 
-### Further Analysis
+## Further Analysis
 
-I want to look at each measurment and see if we can make sense of it. First up,
+I want to look at each measurment and see if we can make sense of it. First up...
 
 **The Intro Animation**
 
