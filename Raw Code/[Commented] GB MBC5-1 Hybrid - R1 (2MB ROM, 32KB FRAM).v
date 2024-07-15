@@ -1,4 +1,4 @@
-module mbc5_4mb_v0.1 (
+module mbc5_2mb_v0.1 (
 		// Variables
 reset, 
 clock,
