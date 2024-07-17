@@ -14,7 +14,7 @@ The whole project is based from Alex's project from years back. Without that pro
 
 	+ No need for sourcing a donor cartridge
 	+ Multi MBC compatibility
-	+ Cheaper to build vs other carts*
+	+ Cheaper to build vs a donor cart (initially not, more made, more saved)
 
 ### Disadvantages:
 
@@ -22,6 +22,7 @@ The whole project is based from Alex's project from years back. Without that pro
 	- Programming the CPLD is non-trivial
 	- Power use is high
 	- Extra components required to program CPLD
+ 	- More circuit board components required
 
 ## Prerequisites
 
@@ -29,7 +30,7 @@ You are going to need a bunch of stuff to complete this project.
 
 	* The full components parts list and cart PCB
 	* (Optional) JTAG adaptor PCB
-	* Altera USB Blaster for JTAG
+	* Altera USB Blaster for JTAG (Cheap copies work, see below)
 	* Windows PC with Quartus II Programmer or Quartus II Web Edition
 	* GBxCart and related software
  	* Modified Gameboy cart shell or (optional) 3D printed Game Gear cart adaptor
@@ -47,8 +48,9 @@ You are going to need a bunch of stuff to complete this project.
 | FM1808 | SOIC28 | 1 |
 | EPM3064A/32A | TQFP44 | 1 |
 | 74LVC1G332 | TSOP6 | 1 |
-| AP2127K | SOT23-5 | 1 |
-| Cap 100nF | 0603 | 6 |
+| AP2127K-3.3TRG1 | SOT23-5 | 1 |
+| Cap 100nF | 0603 | 4 |
+| Cap 1uF | 0603 | 2 |
 | Res 10K | 0603 | 1 |
 
 
