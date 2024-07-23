@@ -141,6 +141,10 @@ Driver Installation: https://www.terasic.com.tw/wiki/Intel_USB_Blaster_Driver_In
 
 Driver Download: https://github.com/sudhamshu091/USB-Blaster-Driver-for-DE10-lite
 
+Game gear Adaptor: https://www.thingiverse.com/thing:5830799
+
+Alternative Download for Quartus: https://archive.org/details/quartus-iiprogrammer-and-signal-tap-ii-13.1.0.162.7z
+
 ## Extra Links
 
 add iG website
