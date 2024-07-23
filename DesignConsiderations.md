@@ -6,9 +6,13 @@ I thought I'd note down some thoughts here about the design, alternatives and fu
 
 I honestly just copied what Alex used in his project. Not blindly mind you, I went to check it out to see if it was suitable and how best to use it. The AP2127K-3.3, nice and compact, while having way more current output than this will need.
 
-Just copy the diagram in the datasheet and it is good to go. Some input capacitance and some output capacitance for stability. Slightly more capacitance on the output than the input.
+Just copy the diagram in the datasheet and it is good to go. Some input capacitance, and some output capacitance for stability.
+
+![image](https://github.com/user-attachments/assets/b8db8404-3ce8-446b-b2b6-2e37e6700fea)
 
 The CPLD requires its own decoupling locally too. The regulator is positioned right next to the CPLD to help with supply issues, but it is best to still have decoupling for the chip. Another data sheet, for the PLD range, suggestes 220nF for decoupling. It states multiple times that it is an overkill value, so as I see it, it's a coverall bases number to cover their ass. I think that two 100nF capacitors will be more than enough with one on opposite ends of the chip. I'd honestly leave one unpopulated when building. That 220nF is for a PLD at full chat in a non ideal scenario. A single 100nF will be enough with the 1uF tucked agains the regulator too.
+
+![Screenshot from 2024-07-23 21-39-59](https://github.com/user-attachments/assets/1edae503-0bf9-4a26-af0f-1835f985e628)
 
 What can you get away with though? The MAX 3000A datasheet shows the absolute maximum supply voltage for the CPLD is 4.6v. Using a diode to drop 0.7v from 5v, the CPLD could potentially run on 4.3v. Two diodes in series would bring things to 3.6v. Just within the max recommended supply voltage.
 
