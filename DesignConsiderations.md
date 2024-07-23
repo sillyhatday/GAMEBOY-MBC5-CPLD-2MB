@@ -1,10 +1,18 @@
-## Design Considerrations
+## Design Considerations
 
 I thought I'd note down some thoughts here about the design, alternatives and future plans. 
 
 ### Supply Voltages:
 
-MAX 3000A datasheet shows the absolute maximum supply voltage for the CPLD is 4.6v. Using a diode to drop 0.7v from 5v, the CPLD could potentially run on 4.3v. Two diodes in series would bring things to 3.6v. Just within the max recommended supply voltage.
+I honestly just copied what Alex used in his project. Not blindly mind you, I went to check it out to see if it was suitable and how best to use it. The AP2127K-3.3, nice and compact, while having way more current output than this will need.
+
+Just copy the diagram in the datasheet and it is good to go. Some input capacitance and some output capacitance for stability. Slightly more capacitance on the output than the input.
+
+The CPLD requires its own decoupling locally too. The regulator is positioned right next to the CPLD to help with supply issues, but it is best to still have decoupling for the chip. Another data sheet, for the PLD range, suggestes 220nF for decoupling. It states multiple times that it is an overkill value, so as I see it, it's a coverall bases number to cover their ass. I think that two 100nF capacitors will be more than enough with one on opposite ends of the chip. I'd honestly leave one unpopulated when building. That 220nF is for a PLD at full chat in a non ideal scenario. A single 100nF will be enough with the 1uF tucked agains the regulator too.
+
+What can you get away with though? The MAX 3000A datasheet shows the absolute maximum supply voltage for the CPLD is 4.6v. Using a diode to drop 0.7v from 5v, the CPLD could potentially run on 4.3v. Two diodes in series would bring things to 3.6v. Just within the max recommended supply voltage.
+
+If you were in China selling these beyond cheap, then a single diode would be acceptable. Saying that, many designs I see slam 3.3v parts onto 5v. You'd think that for GBA 3.3v logic they would be fine with those 3.3v parts, nope, they use 1.8v parts. I digress.
 
 ![image](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/7ad6c4f1-474b-430a-8a7c-38a094d51354)
 
@@ -16,9 +24,7 @@ Input pin max operating voltage
 
 ![image](https://github.com/sillyhatday/GAMEBOY-MBC5-CPLD-2MB/assets/65309612/c0ca1e72-9525-43fb-be55-a84cd655be1b)
 
-If you were in China selling these beyond cheap, then a single diode would be acceptable. Saying that, many designs I see slam 3.3v parts onto 5v. You'd think that for GBA 3.3v logic they would be fine with those 3.3v parts, nope, they use 1.8v parts.
-
-Moving to the Atmel part will solve any need for supply regulation with its 5v rating.
+Moving to the Atmel part will solve any need for supply regulation with its 5v rating. Removing the need for an on cart voltage regulator.
 
 ### FRAM Precharge
 
