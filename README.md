@@ -91,7 +91,9 @@ Driver Download: https://github.com/sudhamshu091/USB-Blaster-Driver-for-DE10-lit
 
 Assemble the cart. Make sure you have good solder joints and that any flux is thoroughly cleaned from IC pins. The JTAG interface seems sensitive and excess flux has caused me issues trying to program.
 
-Make sure to download the programmer software from here or source it yourself if you wish. The install is simple, just click through and wait. I have also uploaded it here: https://archive.org/details/quartus-iiprogrammer-and-signal-tap-ii-13.1.0.162.7z
+Make sure to download the programmer software from here or source it yourself if you wish. The install is simple, just click through and wait. I have also uploaded it here:
+
+https://archive.org/details/quartus-iiprogrammer-and-signal-tap-ii-13.1.0.162.7z
 
 Insert your assembled cart into the JTAG adaptor using the 3D printed shim so that the cart can be inserted upside down. (The side with the 6 cart edge pins). If you don’t have  access to a shim, you can sacrifice an old Gameboy cart by cutting it up so that your cart can fit in it upside down.
 
@@ -129,4 +131,21 @@ In theory this should never cause an issue. Logically there is no reason to map 
 
 So why did Nintendo remove this idiot proof feature from their first mapper in the later ones? In my opinion, I think they realised mapping 0 bank is a waste of time and it doesn't hurt anything to do. But mostly as MBC1 and MBC5 use a second register to select the highest address bit in their extended ROM mode. Doing this you end up with holes in the address space you need to keep track of. For MBC1 you have 512KB of ROM space available, in extended mode you have 2MB available. The quadrupling of space uses another register to store 2 extra bits. These are then output on two extra I/O pins. If you want the first bank of the 1 to 1.5MB ROM space, that is bank zero, which switches to a 1. Each 512KB ROM space is missing bank 0. In MBC5 this does not exist as it is able to map bank zero, therefore, you do not have to keep track of things.
 
-The theory is that this should be 100% compatible with MBC5. That said, it is not programmed to behave exactly like an MBC5, so there could be a game out there that doesn't work. 
+The theory is that this should be 100% compatible with MBC5. That said, it is not programmed to behave exactly like an MBC5, so there could be a game out there that doesn't work.
+
+## Links
+
+Here are the links mentioned through the readme. They are already in the readme, but also here for aid of finding them.
+
+Driver Installation: https://www.terasic.com.tw/wiki/Intel_USB_Blaster_Driver_Installation_Instructions
+
+Driver Download: https://github.com/sudhamshu091/USB-Blaster-Driver-for-DE10-lite
+
+## Extra Links
+
+add iG website
+add iG github
+add iG discord
+add MGGB
+add Bucket discord
+credit xuk, jamo, alex, deceptive thinker, 
