@@ -8,6 +8,12 @@ The whole project is based from Alex's project from years back. Without that pro
 
 ### Alex's project can be found here: https://github.com/insidegadgets/Gameboy-MBC5-MBC1-Hybrid
 
+![20240724_193152](https://github.com/user-attachments/assets/640603c4-fff9-43e4-a779-eaa6f85a892c)
+
+![20240724_193237](https://github.com/user-attachments/assets/b2873e74-364e-4473-9696-c0db93efc231)
+
+![20240724_193322](https://github.com/user-attachments/assets/1edb8943-bc68-4531-a703-fbf612c330d6)
+
 ## Advantages vs disadvantages:
 
 ### Advantages:
@@ -157,4 +163,4 @@ https://github.com/bytendomods
 
 https://github.com/Bucket-Mouse
 
-credit xuk, jamo, alex, deceptive thinker, Thanks to Xukkorz, Drew, Jamo, Alex & Deceptive Thinker for their input and anyone else who I may have forgotten.
+Thanks to Xukkorz, Drew, Jamo, Alex & Deceptive Thinker for their input and anyone else who I may have forgotten.
