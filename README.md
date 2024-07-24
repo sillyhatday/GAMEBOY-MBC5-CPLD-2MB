@@ -147,9 +147,14 @@ Alternative Download for Quartus: https://archive.org/details/quartus-iiprogramm
 
 ## Extra Links
 
-add iG website
-add iG github
-add iG discord
-add MGGB
-add Bucket discord
-credit xuk, jamo, alex, deceptive thinker, 
+https://shop.insidegadgets.com
+
+https://github.com/insidegadgets
+
+https://www.instagram.com/inside.gadgets
+
+https://github.com/bytendomods
+
+https://github.com/Bucket-Mouse
+
+credit xuk, jamo, alex, deceptive thinker, Thanks to Xukkorz, Drew, Jamo, Alex & Deceptive Thinker for their input and anyone else who I may have forgotten.
